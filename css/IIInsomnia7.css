@@ -1,0 +1,689 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei UI";
+    font-size: 12px;
+}
+html, body {
+    height: 100%;
+    background: url("../images/desktop/background.jpg") no-repeat center;
+    background-size: cover;
+}
+.IIInsomnia7 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.IIInsomnia7 ul {
+    list-style: none;
+}
+.IIInsomnia7 a {
+    text-decoration: none;
+}
+
+/*桌面*/
+.IIInsomnia7 .desktop {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 40px;
+    overflow: hidden;
+}
+
+/*快捷方式*/
+.IIInsomnia7 .shortcut {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    list-style: none;
+}
+.IIInsomnia7 .shortcut .ink {
+    position: absolute;
+    width: 104px;
+    height: 96px;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px;
+    border: solid 1px transparent;
+}
+.IIInsomnia7 .shortcut .ink:hover {
+    border: solid 1px #102a3e;
+    border-radius: 5px;
+    box-shadow: inset 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    background: rgba(250, 250, 250, 0.2);
+}
+.IIInsomnia7 .shortcut .ink img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+.IIInsomnia7 .shortcut .ink span {
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+    margin-top: 5px;
+    padding: 0 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*窗口*/
+.IIInsomnia7 .window {
+    position: absolute;
+    border: solid 1px #102a3e;
+    border-radius: 5px;
+    box-shadow: inset 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    background-color: #eeeeee;
+    background: -moz-linear-gradient(top, #eeeeee, #efefef 50%, #ffffff);
+    background: -webkit-gradient(linear, center top, center bottom, from(#eeeeee), color-stop(45%, #efefef), to(#ffffff));
+}
+.IIInsomnia7 .active{
+    background-color: #3068B5;
+    background: -moz-linear-gradient(top, #3068B5, #466D82 50%, #71AFF8);
+    background: -webkit-gradient(linear, center top, center bottom, from(#3068B5), color-stop(45%, #466D82), to(#71AFF8));
+}
+.IIInsomnia7 .window .titlebar {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    left: 0;
+    top: 0;
+    padding: 0 10px;
+    line-height: 28px;
+    text-align: center;
+}
+.IIInsomnia7 .window .titlebar .win-logo {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+.IIInsomnia7 .window .titlebar .win-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+.IIInsomnia7 .window .titlebar .title-mask {
+    position: absolute;
+    height: 30px;
+    left: 23px;
+    right: 118px;
+    background: none;
+    opacity: 0;
+    cursor: move;
+}
+.IIInsomnia7 .window .titlebar span {
+    font-size: 16px;
+}
+.IIInsomnia7 .window .titlebar .handle {
+    position: absolute;
+    height: 29px;
+    top: 1px;
+    right: 7px;
+}
+.IIInsomnia7 .window .titlebar a {
+    display: block;
+    width: 26px;
+    height: 24px;
+    float: left;
+    margin-left: 5px;
+    overflow: hidden;
+}
+.IIInsomnia7 .window .titlebar .min {
+    background-image: url(../images/window/min.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.IIInsomnia7 .window .titlebar .max {
+    background-image: url(../images/window/max.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.IIInsomnia7 .window .titlebar .revert {
+    background-image: url(../images/window/revert.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.IIInsomnia7 .window .titlebar .close {
+    width: 44px;
+    background-color: #c75050;
+    background-image: url(../images/window/close-hover.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.IIInsomnia7 .window .titlebar .min:hover {
+    background-color: #3664b3;
+    background-image: url(../images/window/min-hover.png);
+}
+.IIInsomnia7 .window .titlebar .max:hover {
+    background-color: #3664b3;
+    background-image: url(../images/window/max-hover.png);
+}
+.IIInsomnia7 .window .titlebar .revert:hover {
+    background-color: #3664b3;
+    background-image: url(../images/window/revert-hover.png);
+}
+.IIInsomnia7 .window .titlebar .close:hover {
+    background-color: #e14242;
+}
+.IIInsomnia7 .window .body {
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    top: 30px;
+    bottom: 7px;
+    overflow: hidden;
+}
+.IIInsomnia7 .window .body iframe {
+    width: 99.99%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 30px;
+}
+.IIInsomnia7 .window .body .mask {
+    background: none;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: none;
+}
+.IIInsomnia7 .window .body .loading {
+    background: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background: #66CEFF;
+}
+.IIInsomnia7 .window .body .loading img {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -125px;
+}
+.IIInsomnia7 .T {
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    top: -3px;
+    left: 0;
+    background: none;
+    opacity: 0;
+    z-index: 1;
+    cursor: n-resize;
+}
+.IIInsomnia7 .R {
+    position: absolute;
+    width: 7px;
+    height: 100%;
+    top: 0;
+    right: -3px;
+    background: none;
+    opacity: 0;
+    z-index: 1;
+    cursor: e-resize;
+}
+.IIInsomnia7 .B {
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    bottom: -3px;
+    left: 0;
+    background: none;
+    opacity: 0;
+    z-index: 1;
+    cursor: s-resize;
+}
+.IIInsomnia7 .L {
+    position: absolute;
+    width: 7px;
+    height: 100%;
+    top: 0;
+    left: -3px;
+    background: none;
+    opacity: 0;
+    z-index: 1;
+    cursor: w-resize;
+}
+.IIInsomnia7 .RT {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: -3px;
+    right: -3px;
+    background: none;
+    opacity: 0;
+    z-index: 2;
+    cursor: ne-resize;
+}
+.IIInsomnia7 .RB {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    bottom: -3px;
+    right: -3px;
+    background: none;
+    opacity: 0;
+    z-index: 2;
+    cursor: se-resize;
+}
+.IIInsomnia7 .LB {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    bottom: -3px;
+    left: -3px;
+    background: none;
+    opacity: 0;
+    z-index: 2;
+    cursor: sw-resize;
+}
+.IIInsomnia7 .LT {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: -3px;
+    left: -3px;
+    background: none;
+    opacity: 0;
+    z-index: 2;
+    cursor: nw-resize;
+}
+
+/*任务栏*/
+.IIInsomnia7 .taskbar {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background: none;
+    border-top: solid 1px #102a3e;
+    box-shadow: inset 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    z-index: 999999999;
+}
+.IIInsomnia7 .winStart {
+    width: 38px;
+    border-radius: 50%;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    bottom: 0;
+    cursor: pointer;
+    background-image: url(../images/win.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+/*.IIInsomnia7 .winStart:hover{
+    background-image: url(../images/win-hover.png);
+}*/
+.IIInsomnia7 .task-wrap {
+    list-style: none;
+    overflow: hidden;
+    position: absolute;
+    height: 40px;
+    left: 40px;
+    right: 0;
+    top: 0;
+    padding-top: 1px;
+}
+.IIInsomnia7 .task {
+    display: inline-block;
+    min-width: 80px;
+    height: 38px;
+    line-height: 38px;
+    border: solid 1px #000;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    cursor: pointer;
+    margin: 0 2px;
+    padding: 0 5px;
+}
+.IIInsomnia7 .task img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 4px;
+    border-radius: 50%;
+}
+.IIInsomnia7 .task span {
+    color: #ffffff;
+}
+.IIInsomnia7 .task:hover {
+    background-color: #5694E1;
+    background: -moz-linear-gradient(center top, #5694E1, transparent 50%, #5694E1);
+    background: -webkit-gradient(linear, center top, center bottom, from(#5694E1), color-stop(50%, transparent), to(#5694E1));
+}
+.IIInsomnia7 .task-wrap .active {
+    background-color: #5694E1;
+    background: -moz-linear-gradient(center top, #5694E1, transparent 50%, #5694E1);
+    background: -webkit-gradient(linear, center top, center bottom, from(#5694E1), color-stop(50%, transparent), to(#5694E1));
+}
+
+/*开始菜单*/
+.IIInsomnia7 .startmenu {
+    display: none;
+    width: 320px;
+    height: 60%;
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    border: solid 1px #102a3e;
+    border-radius: 5px;
+    box-shadow: inset 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    background-color: #3068B5;
+    background: -moz-linear-gradient(top, #3068B5, #466D82 50%, #71AFF8);
+    background: -webkit-gradient(linear, center top, center bottom, from(#3068B5), color-stop(45%, #466D82), to(#71AFF8));
+    z-index: 999999999;
+}
+.IIInsomnia7 .startmenu .profile {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: -30px;
+    right: 24px;
+    text-align: center;
+    color: #ffffff;
+}
+.IIInsomnia7 .startmenu .programs {
+    width: 200px;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    bottom: 7px;
+    background: #ffffff;
+    border: solid 1px #365167;
+    box-shadow: 0 0 1px #ffffff;
+    -moz-box-shadow: 0 0 1px #ffffff;
+    -webkit-box-shadow: 0 0 1px #ffffff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 6px;
+}
+.IIInsomnia7 .startmenu .programs .ink {
+    padding: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    border: solid 1px transparent;
+}
+.IIInsomnia7 .startmenu .programs .ink:hover {
+    border: solid 1px #7da2ce;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    background-color: #cfe3fd;
+    background: -moz-linear-gradient(top, #dcebfd, #c2dcfd);
+    background: -webkit-gradient(linear, center top, center bottom, from(#dcebfd), to(#c2dcfd));
+}
+.IIInsomnia7 .startmenu .programs .ink img {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: none;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+.IIInsomnia7 .startmenu .programs .ink span {
+    display: inline-block;
+    color: #000000;
+    font-size: 14px;
+    vertical-align: middle;
+}
+.IIInsomnia7 .startmenu .links {
+    width: 102px;
+    position: absolute;
+    top: 7px;
+    bottom: 7px;
+    right: 7px;
+    padding: 6px;
+}
+.IIInsomnia7 .startmenu .links ul {
+    position: absolute;
+    left: 6px;
+    right: 1px;
+    top: 60px;
+    bottom: 38px;
+}
+.IIInsomnia7 .startmenu .links ul .link {
+    color: #ffffff;
+    font-size: 14px;
+    padding: 7px;
+    border: solid 1px transparent;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.IIInsomnia7 .startmenu .links ul .link:hover {
+    border: solid 1px #000;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    background-color: #5E9CE9;
+    background: -moz-linear-gradient(top, #5E9CE9, #3068b5 50%, #71AFF8);
+    background: -webkit-gradient(linear, center top, center bottom, from(#5E9CE9), color-stop(50%, #3068b5), to(#71AFF8));
+}
+.IIInsomnia7 .startmenu .links .logout {
+    display: block;
+    padding: 6px;
+    color: #ffffff;
+    position: absolute;
+    left: 6px;
+    right: 1px;
+    bottom: 0;
+    font-size: 14px;
+    text-align: center;
+    border: solid 1px #000;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    background-color: #5E9CE9;
+    background: -moz-linear-gradient(top, transparent, #3C75C2 50%, transparent);
+    background: -webkit-gradient(linear, center top, center bottom, from(transparent), color-stop(50%, #3C75C2), to(transparent));
+}
+.IIInsomnia7 .startmenu .links .logout:hover {
+    background-color: #5E9CE9;
+    background: -moz-linear-gradient(top, #5E9CE9, #3068b5 50%, #5E9CE9);
+    background: -webkit-gradient(linear, center top, center bottom, from(#5E9CE9), color-stop(50%, #3068b5), to(#5E9CE9));
+}
+
+/*任务栏右键菜单*/
+.IIInsomnia7 .task-context {
+    width: 120px;
+    min-height: 51px;
+    position: absolute;
+    overflow: hidden;
+    border: solid 1px #102a3e;
+    border-radius: 5px;
+    box-shadow: inset 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    background-color: #3068B5;
+    background: -moz-linear-gradient(top, #3068B5, #466D82 50%, #71AFF8);
+    background: -webkit-gradient(linear, center top, center bottom, from(#3068B5), color-stop(45%, #466D82), to(#71AFF8));
+    z-index: 999999999;
+}
+.IIInsomnia7 .task-context .inner {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    right: 7px;
+    bottom: 7px;
+    background: #ffffff;
+    padding: 7px;
+}
+.IIInsomnia7 .task-context .inner a {
+    display: block;
+    width: 100%;
+    color: #000000;
+    padding: 2px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.IIInsomnia7 .task-context .inner a:hover {
+    border: 1px solid #71AFF8;
+}
+.IIInsomnia7 .task-context .inner a span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.IIInsomnia7 .task-context .inner .close .icon {
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/window/close-hover.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #c75050;
+    margin-right: 4px;
+}
+
+/*桌面右键菜单*/
+.IIInsomnia7 .desktop .desktop-context {
+    position: absolute;
+    width: 120px;
+    overflow: hidden;
+    z-index: 999999999;
+    display: none;
+}
+.IIInsomnia7 .desktop .desktop-context .inner {
+    padding: 2px;
+    border: 1px solid #B8CBCB;
+    background-color: #fff;
+    -moz-box-shadow: 2px 2px 5px #666666;
+    -webkit-box-shadow: 2px 2px 5px #666666;
+    box-shadow: 2px 2px 5px #666666;
+}
+.IIInsomnia7 .desktop .desktop-context .inner .separate {
+    line-height: 0;
+    margin: 3px;
+    border-bottom: 1px solid #d6d5d5;
+    font-size: 0;
+}
+.IIInsomnia7 .desktop .desktop-context .inner .menu a {
+    display: block;
+    height: 25px;
+    line-height: 24px;
+    padding: 0 5px 0 25px;
+    color: #000000;
+    overflow: hidden;
+}
+.IIInsomnia7 .desktop .desktop-context .inner .menu a:hover {
+    background-color: #4D90FE;
+    color: #ffffff;
+}
+
+/*快捷方式右键菜单*/
+.IIInsomnia7 .desktop .shortcut-context {
+    position: absolute;
+    width: 100px;
+    overflow: hidden;
+    z-index: 999999999;
+    display: none;
+}
+.IIInsomnia7 .desktop .shortcut-context .inner {
+    padding: 2px;
+    border: 1px solid #B8CBCB;
+    background-color: #fff;
+    -moz-box-shadow: 2px 2px 5px #666666;
+    -webkit-box-shadow: 2px 2px 5px #666666;
+    box-shadow: 2px 2px 5px #666666;
+}
+.IIInsomnia7 .desktop .shortcut-context .inner .separate {
+    line-height: 0;
+    margin: 3px;
+    border-bottom: 1px solid #d6d5d5;
+    font-size: 0;
+}
+.IIInsomnia7 .desktop .shortcut-context .inner .menu a {
+    display: block;
+    height: 25px;
+    line-height: 24px;
+    padding: 0 5px 0 25px;
+    color: #000000;
+    overflow: hidden;
+}
+.IIInsomnia7 .desktop .shortcut-context .inner .menu a:hover {
+    background-color: #4D90FE;
+    color: #ffffff;
+}
+
+/*窗口标题栏右键菜单*/
+.IIInsomnia7 .desktop .titlebar-context {
+    position: absolute;
+    width: 120px;
+    overflow: hidden;
+    z-index: 999999999;
+    display: none;
+}
+.IIInsomnia7 .desktop .titlebar-context .inner {
+    padding: 2px;
+    border: 1px solid #B8CBCB;
+    background-color: #fff;
+    -moz-box-shadow: 2px 2px 5px #666666;
+    -webkit-box-shadow: 2px 2px 5px #666666;
+    box-shadow: 2px 2px 5px #666666;
+}
+.IIInsomnia7 .desktop .titlebar-context .inner .separate {
+    line-height: 0;
+    margin: 3px;
+    border-bottom: 1px solid #d6d5d5;
+    font-size: 0;
+}
+.IIInsomnia7 .desktop .titlebar-context .inner .revert-menu {
+    display: none;
+}
+.IIInsomnia7 .desktop .titlebar-context .inner .menu a {
+    display: block;
+    height: 25px;
+    line-height: 24px;
+    padding: 0 5px 0 25px;
+    color: #000000;
+    overflow: hidden;
+}
+.IIInsomnia7 .desktop .titlebar-context .inner .menu a:hover {
+    background-color: #4D90FE;
+    color: #ffffff;
+}

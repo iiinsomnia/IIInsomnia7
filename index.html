@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>IIInsomnia7</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/win_favicon.ico">
+    <link rel="stylesheet" type="text/css" href="js/perfect-scrollbar/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="css/IIInsomnia7.css">
+    <script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
+</head>
+<body oncontextmenu="return false">
+<div class="IIInsomnia7" id="IIInsomnia7">
+    <div class="desktop" id="desktop">
+        <ul class="shortcut" id="shortcut">
+            <li class="ink" data-window="1" data-title="W3C" data-logo="images/shortcut/w3c.jpg" data-url="http://www.w3cplus.com/">
+                <img src="images/shortcut/w3c.jpg" alt="">
+                <span>W3C</span>
+            </li>
+            <li class="ink" data-window="2" data-title="QQ轻聊" data-logo="images/shortcut/qq.jpg" data-url="http://www.qq.com/">
+                <img src="images/shortcut/qq.jpg" alt="">
+                <span>QQ轻聊</span>
+            </li>
+            <li class="ink" data-window="3" data-title="微信" data-logo="images/shortcut/wx.jpg" data-url="http://weixin.qq.com/">
+                <img src="images/shortcut/wx.jpg" alt="">
+                <span>微信</span>
+            </li>
+            <li class="ink" data-window="4" data-title="酷6网" data-logo="images/shortcut/ku6.png" data-url="http://www.ku6.com/">
+                <img src="images/shortcut/ku6.png" alt="">
+                <span>酷6网</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="taskbar" id="taskbar">
+        <div class="winStart" id="winStart"></div>
+        <ul class="task-wrap" id="task_wrap"></ul>
+    </div>
+    <div class="startmenu" id="startmenu">
+        <div class="profile">
+            <img src="images/folder.png" alt="">
+            <span>ShengHui</span>
+        </div>
+        <div class="programs" id="programs"></div>
+        <div class="links" id="links">
+            <ul>
+                <li class="link" data-window="5" data-title="个人资料" data-logo="images/shortcut/qq.jpg" data-url="http://javascript.ruanyifeng.com/">个人资料</li>
+                <li class="link" data-window="6" data-title="修改密码" data-logo="images/shortcut/qq.jpg" data-url="http://fssc.haiziwang.com/login.jsp">修改密码</li>
+                <li class="link" data-window="7" data-title="设 置" data-logo="images/shortcut/w3c.jpg" data-url="http://www.w3cplus.com/">设 置</li>
+            </ul>
+            <a href="#" class="logout">注 销</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js"></script>
+<script type="text/javascript" src="js/IIInsomnia7.js"></script>
+<script>
+    var iiisomnia = new IIInsomnia7({
+        // 'fullScreen': true,
+        'windowWidth': 800,
+        'windowHeight': 600,
+        'loading': 'images/loading.gif'
+    });
+    iiisomnia.init();
+</script>
+</body>
+</html>
